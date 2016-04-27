@@ -43,24 +43,17 @@ import java.util.NoSuchElementException;
 import java.util.Queue;
 
 /**
- * An unbounded thread-safe {@linkplain Queue queue} based on linked nodes.
- * This queue orders elements FIFO (first-in-first-out).
- * The <em>head</em> of the queue is that element that has been on the
- * queue the longest time.
- * The <em>tail</em> of the queue is that element that has been on the
- * queue the shortest time. New elements
- * are inserted at the tail of the queue, and the queue retrieval
- * operations obtain elements at the head of the queue.
- * A {@code ConcurrentLinkedQueue} is an appropriate choice when
- * many threads will share access to a common collection.
- * Like most other concurrent collection implementations, this class
- * does not permit the use of {@code null} elements.
+ * 一个建立在链接节点基础上的无界的线程安全的队列实现
+ * 此队列基于FIFO（先进先出）
+ * 队列的头（head）是在队列中存在时间最长的元素
+ * 队列的尾（tail）是在队列中存在时间最短的元素
+ * 新元素将被加入到队尾，获取元素的操作将得到队首的元素
+ * ConcurrentLinkedQueue 在多线程需要共同访问一个普通集合将会是一个合适的选择
+ * 和大多数并发集合类实现一样，此类不允许使用 null 元素
  *
- * <p>This implementation employs an efficient &quot;wait-free&quot;
- * algorithm based on one described in <a
- * href="http://www.cs.rochester.edu/u/michael/PODC96.html"> Simple,
- * Fast, and Practical Non-Blocking and Blocking Concurrent Queue
- * Algorithms</a> by Maged M. Michael and Michael L. Scott.
+ * 此队列的实现使用了 Maged M. Michael and Michael L. Scott 提出的
+ * Simple,Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms
+ * 的一个高效的无等待队列的实现
  *
  * <p>Iterators are <i>weakly consistent</i>, returning elements
  * reflecting the state of the queue at some point at or since the
@@ -81,8 +74,7 @@ import java.util.Queue;
  * concurrently with an {@code addAll} operation might view only some
  * of the added elements.
  *
- * <p>This class and its iterator implement all of the <em>optional</em>
- * methods of the {@link Queue} and {@link Iterator} interfaces.
+ * 此类实现了所有 Queue 的可选方法，它的迭代器实现了Iterator 接口
  *
  * <p>Memory consistency effects: As with other concurrent
  * collections, actions in a thread prior to placing an object into a
@@ -91,9 +83,7 @@ import java.util.Queue;
  * actions subsequent to the access or removal of that element from
  * the {@code ConcurrentLinkedQueue} in another thread.
  *
- * <p>This class is a member of the
- * <a href="{@docRoot}/../technotes/guides/collections/index.html">
- * Java Collections Framework</a>.
+ * 此类隶属于 Java 集合框架
  *
  * @since 1.5
  * @author Doug Lea
